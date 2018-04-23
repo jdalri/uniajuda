@@ -1,0 +1,22 @@
+<ion-content padding id="page-content">
+    
+    <div class="logo-div">
+        <img class="logo-img" src="../../assets/imgs/UniAjudaLogo.png" alt="uni ajuda logo">
+    </div>
+    
+    <br>
+
+    <form id="login-form" (ngSubmit)='efetuarLogin()'>
+        <ion-item>
+            <ion-label floating>CPF</ion-label>
+            <ion-input type="number" [(ngModel)]='cpf' name='cpf'></ion-input>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label floating>Senha</ion-label>
+            <ion-input type="password" [(ngModel)]='senha' name='senha'></ion-input>
+        </ion-item>
+    
+        <button ion-button block color="dark" class="login-button">Entrar</button>
+    </form>
+</ion-content>

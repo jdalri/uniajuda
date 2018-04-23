@@ -1,0 +1,22 @@
+page-login {
+    #page-content {
+        background: url('../../assets/imgs/loginBackgroud.png') no-repeat center center fixed;
+    }
+
+    .logo-div {
+        position: fixed;
+        top: 15%;
+        left: 44%;
+        margin-top: -50px;
+        margin-left: -100px;
+    }
+
+    #login-form {
+        position: relative;
+        top: 37%;
+    }
+
+    .login-button {
+        margin-top: 25px;
+    }
+}
