@@ -9,7 +9,8 @@
     <form id="login-form" (ngSubmit)='efetuarLogin()'>
         <ion-item>
             <ion-label floating>CPF</ion-label>
-            <ion-input type="number" [(ngModel)]='cpf' name='cpf'></ion-input>
+            <!-- add validação de cpf e bloquear letras -->
+            <ion-input type="text" [(ngModel)]='cpf' name='cpf' maxlength="11"></ion-input> 
         </ion-item>
         
         <ion-item>
@@ -17,6 +18,6 @@
             <ion-input type="password" [(ngModel)]='senha' name='senha'></ion-input>
         </ion-item>
     
-        <button ion-button block color="dark" class="login-button">Entrar</button>
+        <button ion-button block color="dark" class="login-button" [disabled]="cpf == '' && senha == ''">Entrar</button>
     </form>
 </ion-content>

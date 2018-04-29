@@ -1,3 +1,7 @@
+import { Sala } from './../../models/Sala';
+import { Usuario } from './../../models/Usuario';
+import { InformationServiceProvider } from './../../providers/information-service/information-service';
+import { LoginServiceProvider } from './../../providers/login-service/login-service';
 import { TabsPage } from './../tabs/tabs';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
@@ -9,28 +13,93 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 })
 export class LoginPage 
 {
-    public cpf: string = '';
-    public senha: string = '';
+    public cpf: string = '11111111111';
+    public senha: string = '123123';
+    public isenabled: boolean = false;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, private _alertCtrl: AlertController) 
+    constructor
+    (
+        public navCtrl: NavController, 
+        public navParams: NavParams, 
+        private _alertCtrl: AlertController, 
+        private _login: LoginServiceProvider,
+        private _information: InformationServiceProvider
+    ) 
     {
     }
 
     efetuarLogin()
     {
-        if (this.cpf == '' || this.senha == '')
+        let usuarioLogado = null;
+        let sala = null;
+
+        if (this.cpf == '11111111111' && this.senha == '123123')
+        {
+            sala = new Sala('A-101', 'Bloco A');
+            usuarioLogado = new Usuario('João', this.cpf, this.senha, 'Professor', sala);
+
+            this._information.setUsuario(usuarioLogado);
+            this.navCtrl.setRoot(TabsPage);
+        }
+        else if (this.cpf == '22222222222' && this.senha == '123123')
+        {
+            sala = new Sala('C-203', 'Bloco C')
+            usuarioLogado = new Usuario('José', this.cpf, this.senha, 'Professor', sala);
+
+            this._information.setUsuario(usuarioLogado);
+            this.navCtrl.setRoot(TabsPage);
+        }
+        else if (this.cpf == '33333333333' && this.senha == '123123')
+        {
+            usuarioLogado = new Usuario('Natália', this.cpf, this.senha, 'Amarelinho');
+
+            this._information.setUsuario(usuarioLogado);
+            this.navCtrl.setRoot(TabsPage);
+        }
+        else if (this.cpf == '44444444444' && this.senha == '123123')
+        {
+            usuarioLogado = new Usuario('Lorena', this.cpf, this.senha, 'Amarelinho');
+
+            this._information.setUsuario(usuarioLogado);
+            this.navCtrl.setRoot(TabsPage);
+        }
+        else
         {
             this._alertCtrl.create({
                 title: 'Erro',
-                subTitle: 'Informe o CPF e a senha',
-                buttons: [
-                    'OK'
-                ]
+                subTitle: 'Usuário não encontrado',
+                buttons: [ 'OK' ]
             }).present();
-
-            return;
         }
-        else
-            this.navCtrl.setRoot(TabsPage);
     }
+
+    // efetuarLogin()
+    // {
+    //     this._login.fazerLogin(this.cpf, this.senha)
+    //         .then(res => {
+
+    //             console.log(res);
+
+
+    //             // let usuarioLogado = new Usuario(res.nome, res.cpf, res.senha, res.tipo);
+
+
+
+
+
+    //             // this._information.setUsuario(res);
+
+    //             this.navCtrl.setRoot(TabsPage);
+    //         })
+    //         .catch(err => {
+    //             this._alertCtrl.create({
+    //                 title: 'Erro',
+    //                 subTitle: 'Usuário não encontrado',
+    //                 buttons: [ 'OK' ]
+    //             }).present();
+    //         });
+
+    //     // else
+    //     //     this.navCtrl.setRoot(TabsPage);
+    // }
 }
