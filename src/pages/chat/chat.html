@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Chat</ion-title>
+        <ion-buttons end>
+            <button (click)="finalizarSolicitacao()" ion-button color="danger" outline>Finalizar</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div id="chatMessages">
+        <div *ngFor="let message of messages" [class]="message.specialMessage ? 'message special' : 'message'">
+            <div *ngIf="message != ''" [class]="message.usuario.nome == usuario.nome ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
+                <div class="username">{{ message.usuario.nome }}</div>
+                <div class="messageContent">{{ message.mensagem }}</div>
+            </div>
+        </div>
+    </div>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <div id="footer">
+            <div class="elem">
+                <ion-input type="text" [(ngModel)]="message"></ion-input>
+            </div>
+            <div class="elem">
+                <button ion-button icon-only (click)="enviarMensagem()">
+                    <ion-icon name="send"></ion-icon>
+                </button>
+            </div>
+        </div>
+    </ion-toolbar>
+</ion-footer>

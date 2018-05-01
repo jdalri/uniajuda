@@ -13,7 +13,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 })
 export class LoginPage 
 {
-    public cpf: string = '11111111111';
+    public cpf: string = '33333333333';
     public senha: string = '123123';
     public isenabled: boolean = false;
 
@@ -51,14 +51,16 @@ export class LoginPage
         }
         else if (this.cpf == '33333333333' && this.senha == '123123')
         {
-            usuarioLogado = new Usuario('Natália', this.cpf, this.senha, 'Amarelinho');
+            sala = new Sala('', '');
+            usuarioLogado = new Usuario('Natália', this.cpf, this.senha, 'Amarelinho', sala);
 
             this._information.setUsuario(usuarioLogado);
             this.navCtrl.setRoot(TabsPage);
         }
         else if (this.cpf == '44444444444' && this.senha == '123123')
         {
-            usuarioLogado = new Usuario('Lorena', this.cpf, this.senha, 'Amarelinho');
+            sala = new Sala('', '');
+            usuarioLogado = new Usuario('Lorena', this.cpf, this.senha, 'Amarelinho', sala);
 
             this._information.setUsuario(usuarioLogado);
             this.navCtrl.setRoot(TabsPage);

@@ -13,7 +13,7 @@ export class Solicitacao {
         let data = new Date();
 
         this.professor = professor;
-        this.nomeAmarelinho = '';
+        this.nomeAmarelinho = null;
         this.status = 'Pendente'
         this.dataCriacao = data.getDate() + '/' + (data.getMonth() + 1) + '/' + data.getFullYear() + ' ' + data.getHours() + ':' + data.getMinutes();
     }
