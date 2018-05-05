@@ -36,7 +36,7 @@ export class LoginPage
         if (this.cpf == '11111111111' && this.senha == '123123')
         {
             sala = new Sala('A-101', 'Bloco A');
-            usuarioLogado = new Usuario('João', this.cpf, this.senha, 'Professor', sala);
+            usuarioLogado = new Usuario('Rodrigo', this.cpf, this.senha, 'Professor', sala);
 
             this._information.setUsuario(usuarioLogado);
             this.navCtrl.setRoot(TabsPage);
@@ -51,13 +51,29 @@ export class LoginPage
         }
         else if (this.cpf == '33333333333' && this.senha == '123123')
         {
-            sala = new Sala('', '');
-            usuarioLogado = new Usuario('Natália', this.cpf, this.senha, 'Amarelinho', sala);
+            sala = new Sala('C-203', 'Bloco C')
+            usuarioLogado = new Usuario('Alberto', this.cpf, this.senha, 'Professor', sala);
 
             this._information.setUsuario(usuarioLogado);
             this.navCtrl.setRoot(TabsPage);
         }
         else if (this.cpf == '44444444444' && this.senha == '123123')
+        {
+            sala = new Sala('C-203', 'Bloco C')
+            usuarioLogado = new Usuario('Pedro', this.cpf, this.senha, 'Professor', sala);
+
+            this._information.setUsuario(usuarioLogado);
+            this.navCtrl.setRoot(TabsPage);
+        }        
+        else if (this.cpf == '55555555555' && this.senha == '123123')
+        {
+            sala = new Sala('', '');
+            usuarioLogado = new Usuario('Deise', this.cpf, this.senha, 'Amarelinho', sala);
+
+            this._information.setUsuario(usuarioLogado);
+            this.navCtrl.setRoot(TabsPage);
+        }
+        else if (this.cpf == '66666666666' && this.senha == '123123')
         {
             sala = new Sala('', '');
             usuarioLogado = new Usuario('Lorena', this.cpf, this.senha, 'Amarelinho', sala);
