@@ -15,12 +15,13 @@ import { LoginServiceProvider } from '../providers/login-service/login-service';
 import { InformationServiceProvider } from '../providers/information-service/information-service';
 
 export const fireBaseConfig = {
-    apiKey: "AIzaSyA91DX1nrOlzDhvazRyW_sXWSSITQjKXp4",
-    authDomain: "uniajuda-86319.firebaseapp.com",
-    databaseURL: "https://uniajuda-86319.firebaseio.com",
-    projectId: "uniajuda-86319",
-    storageBucket: "uniajuda-86319.appspot.com",
-    messagingSenderId: "220095966755"
+    apiKey: "AIzaSyA1Xhih7MpRX38JBHIdF5hL-aqV3OoCNks",
+    authDomain: "uniajuda-e4543.firebaseapp.com",
+    databaseURL: "https://uniajuda-e4543.firebaseio.com",
+    projectId: "uniajuda-e4543",
+    storageBucket: "",
+    messagingSenderId: "730896291552"
+
 };
 
 @NgModule({
@@ -44,8 +45,8 @@ export const fireBaseConfig = {
         StatusBar,
         SplashScreen,
         { provide: ErrorHandler, useClass: IonicErrorHandler },
-    LoginServiceProvider,
-    InformationServiceProvider
+        LoginServiceProvider,
+        InformationServiceProvider
     ]
 })
-export class AppModule {}
+export class AppModule { }

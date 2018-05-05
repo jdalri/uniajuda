@@ -1,13 +1,14 @@
 <ion-header>
     <ion-navbar>
         <ion-title>Chat</ion-title>
-        <ion-buttons end>
+        <!-- <ion-buttons *ngIf="usuario.tipo=='Amarelinho'" end> -->
+        <ion-buttons  end>
             <button (click)="finalizarSolicitacao()" ion-button color="danger" outline>Finalizar</button>
         </ion-buttons>
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="chat" padding>
     <div id="chatMessages">
         <div *ngFor="let message of messages" [class]="message.specialMessage ? 'message special' : 'message'">
             <div *ngIf="message != ''" [class]="message.usuario.nome == usuario.nome ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
@@ -25,7 +26,7 @@
                 <ion-input type="text" [(ngModel)]="message"></ion-input>
             </div>
             <div class="elem">
-                <button ion-button icon-only (click)="enviarMensagem()">
+                <button clas="button" *ngIf="message != ''" ion-button icon-only (click)="enviarMensagem()">
                     <ion-icon name="send"></ion-icon>
                 </button>
             </div>

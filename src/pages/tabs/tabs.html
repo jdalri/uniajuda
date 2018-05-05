@@ -1,7 +1,7 @@
 <ion-tabs>
-    <ion-tab [root]="tab1Root" tabTitle="Pendente" *ngIf="_usuarioLogado.tipo == 'Amarelinho'"></ion-tab>
-    <ion-tab [root]="tab2Root" tabTitle="Atendendo" *ngIf="_usuarioLogado.tipo == 'Amarelinho'"></ion-tab>
-    <ion-tab [root]="tab3Root" tabTitle="Finalizado" *ngIf="_usuarioLogado.tipo == 'Amarelinho'"></ion-tab>
+    <ion-tab  style="border: black 1px solid !important;" [root]="tab1Root" tabTitle="Pendente" *ngIf="_usuarioLogado.tipo == 'Amarelinho'"></ion-tab>
+    <ion-tab  style="border: black 1px solid !important;" [root]="tab2Root" tabTitle="Atendendo" *ngIf="_usuarioLogado.tipo == 'Amarelinho'"></ion-tab>
+    <ion-tab  style="border: black 1px solid !important;" [root]="tab3Root" tabTitle="Finalizado" *ngIf="_usuarioLogado.tipo == 'Amarelinho'"></ion-tab>
 
-    <ion-tab [root]="tab4Root" tabTitle="Solicitações" *ngIf="_usuarioLogado.tipo == 'Professor'"></ion-tab>
+    <ion-tab  style="border: black 1px solid !important;" [root]="tab4Root" tabTitle="Solicitações" *ngIf="_usuarioLogado.tipo == 'Professor'"></ion-tab>
 </ion-tabs>

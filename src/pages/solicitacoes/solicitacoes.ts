@@ -57,8 +57,8 @@ export class SolicitacoesPage
                 return false;
             });
 
-            loading.dismiss();
         });
+        loading.dismiss();
 
         // this._db.list('/solicitacoes', q => q.orderByChild('professor/nome').equalTo(this._usuarioLogado.nome)).valueChanges()
         //     .subscribe(data => { 

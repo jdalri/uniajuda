@@ -9,13 +9,13 @@
         <div *ngFor='let solicitacao of solicitacoes'>
             <button ion-item class="list-item">
                 <ion-avatar item-start>
-                    <img src="../../assets/imgs/avatar-ts-woody.png">
+                    <img src="../../assets/imgs/professor.png">
                 </ion-avatar>
                 <h2 text-center>Prof.: {{ solicitacao.professor.nome }}</h2>
                 <div text-center>
                     <span class="text-left">Sala: {{ solicitacao.professor.sala.nomeSala }}</span>
                     <span class="text-right">
-                        <ion-icon name="time"></ion-icon> {{ solicitacao.dataCriacao.substr(10, 5) }}
+                        <ion-icon name="time"></ion-icon> {{ solicitacao.dataCriacao.substr(9, 5) }}
                     </span>
                 </div>
             </button>

@@ -25,4 +25,22 @@ page-pendente {
         font-size: 18px;
         font-weight: bolder;
     }
+    .item-ok{
+        background-color: #009933;
+        border-radius: 30px;
+        border: black 1px solid !important;
+
+    }
+    .item-pendente{
+        background-color: #ffda00;
+        border-radius: 30px;
+        border: black 1px solid !important;
+
+    }
+    .item-atendimento{
+        background-color: #ff9900;
+        border-radius: 30px;
+        border: black 1px solid !important;
+
+    }
 }

@@ -55,8 +55,9 @@ export class PendentePage
                 return false;
             });
 
-            loading.dismiss();
         });
+        loading.dismiss();
+        
     }
 
     assumirSolicitacao(solicitacaoKey)

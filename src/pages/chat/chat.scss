@@ -4,11 +4,12 @@ page-chat {
 		padding: 5px 10px;
 		background: color($colors, 'primary');
 		margin: 5px;
-		color: white;
 		border-radius: 3px;
+		border: black 1px solid !important
 	}
 	.innerMessage.messageRight {
-		background: color($colors, 'secondary');
+		color: black;
+		background: white;
 	}
 	.username {
 		font-weight: bold;
@@ -53,6 +54,8 @@ page-chat {
 		clear: both;
 	}
 	.messageLeft {
+		color: white;
+		background: black;
 		float: left;
 	}
 	.messageRight {
@@ -85,5 +88,14 @@ page-chat {
 		float: none;
 		text-align: center;
 		position: relative;
+	}
+	.chat{
+		background-color: #ffda00;	
+		border: black 1px solid !important;
+	}
+	.button{
+		background-color: #ffda00;
+		border: black 1px solid !important;
+		color: black;
 	}
 }

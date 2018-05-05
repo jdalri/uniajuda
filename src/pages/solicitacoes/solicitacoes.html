@@ -7,15 +7,20 @@
     <ion-content padding>
         <ion-list>
             <div *ngFor='let solicitacao of solicitacoes'>
-                <button ion-item class="list-item" (click)="verDetalhesSolicitacao(solicitacao.key)">
+               <button ion-item class="list-item" (click)="verDetalhesSolicitacao(solicitacao.key)">
                     <ion-avatar item-start>
-                        <img src="../../assets/imgs/avatar-ts-woody.png">
+                        <img src="../../assets/imgs/professor.png">
                     </ion-avatar>
-                    <h2 text-center>Prof.: {{ solicitacao.professor.nome }}</h2>
+                    <span class="text-right">
+                        <ion-icon class="item-pendente"  *ngIf="solicitacao.status == 'Pendente'" name="alert"></ion-icon>
+                        <ion-icon *ngIf="solicitacao.status == 'Atendendo'" name="chatbubbles"></ion-icon>
+                        <ion-icon  class="item-ok" *ngIf="solicitacao.status == 'Finalizado'" name="checkmark-circle"></ion-icon>
+                    </span>
+                    <h2 text-left>Prof.: {{ solicitacao.professor.nome }}</h2>
                     <div text-center>
                         <span class="text-left">Sala: {{ solicitacao.professor.sala.nomeSala }}</span>
                         <span class="text-right">
-                            <ion-icon name="time"></ion-icon> {{ solicitacao.dataCriacao.substr(10, 5) }}
+                            <ion-icon name="time-outline"></ion-icon> {{ solicitacao.dataCriacao.substr(9, 5) }}
                         </span>
                     </div>
                 </button>
